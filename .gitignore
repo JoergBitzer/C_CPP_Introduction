@@ -1,4 +1,6 @@
 hello_world/
+build/
+.vscode/
 
 # Prerequisites
 *.d

@@ -1,4 +1,6 @@
-# C_CPP_Introduction
+WORK IN PROGRESS (be careful, all is subject to change)
+
+# C_CPP_Introduction 
 A short course of using C/C++ in a plattform independent way:
 
 The goal of this course is to provide you with the tools and knowledge to develop smal programms in C ür C++ 

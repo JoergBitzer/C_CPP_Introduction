@@ -49,5 +49,12 @@ cmake --build build
 #### Visual Code CMAKE extension
 
 
+## Explain all this:
+
+### Programm
+
+### CMAKE code
+
+### CLI Code
 
 

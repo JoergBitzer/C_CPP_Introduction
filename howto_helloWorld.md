@@ -116,4 +116,6 @@ cmake -E chdir build cmake ..
 cmake --build build 
 ```
 
+# Next Step
 
+read basicstructures_in_c.md

@@ -39,7 +39,7 @@ In C/C++ we have two methods for this
 ### if 
 if tests if a condition is true. The condition must be in parenthesis, the following block is in braces. For a negative answer an else block is given. However, there is no elif.
 ```C++
-int a = 3
+int a = 3;
 if (a == 3)
 {
 

@@ -28,6 +28,9 @@ Apple has its own IDE called XCode. You can install XCode for free from the App 
 ```shell
 xcode-select --install
 ```
+Alternativ über den AppStore installieren. 
+
+
 
 #### Linux
 You have to install the build essentials

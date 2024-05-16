@@ -121,9 +121,58 @@ do
 The difference is that for the do-while loop it is guaranteed that the code in the block is executed at least once. 
 
 ## functions
-definition and declaration 
+In contrast to python C/C++ divide functions in declaration and definition. 
+Only Declarations have to be known before usage in code.
+```C++
+#include <iostream>
 
-header files
+// declaration
+int add(int a, int b);
+
+int main()
+{
+    std::cout << add(3,4) << "\n"; 
+}
+// definition
+int add(int a, int b)
+{
+    return a+b;
+}
+```
+Usually, the declarations are in header files (*.h) and the corresponding definitions in source files (*.cpp)
+In the main file we include our new header file, since it is in the same directory we use "".
+
+```C++
+#include <iostream>
+#include "Simplemath.h"
+int main()
+{
+    std::cout << add(3,4) << "\n"; 
+}
+```
+The second source file (Simplemath.cpp) looks like this:
+```C++
+#include "Simplemath.h"
+
+int add(int a, int b)
+{
+    return a+b;
+}
+```
+And the corresponding header (Simplemath.h). The #pragma once is a microsoft specific solution to build a header guard (which works for most compilers (gcc, xcode)). This is necessary to prevent multiple declarations of one function, if the header is included more than one time. 
+```C++
+#pragma once
+// declaration
+int add(int a, int b);
+```
+The old school header guard looks like this
+```C++
+#ifndef _SIMPLE_MATH_H_ // or any other ID that is unique (You can UDE GUID)
+#define _SIMPLE_MATH_H_
+// declaration
+int add(int a, int b);
+#endif
+```
 ## Class
 
 object oriented programming

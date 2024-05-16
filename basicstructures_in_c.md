@@ -174,13 +174,45 @@ int add(int a, int b);
 #endif
 ```
 ## Class
+Classes are a concept for object oriented programming. The idea is to have objects (data) with methods (functions) combined. In C++ classes have three levels ov visibility/changebility:
+* public: This is the interface to users of the class (mostly methods)
+* protected: These are member variables and methods where inherited classes have access (Standard).
+* private: These are member variables and methods only for this class (seldom used).
 
-object oriented programming
 
-methods
-member variables
+A typical class declaration (*.h file) looks like this. This class add a fixed number to anumber a, every time add is called.
+```C++
+#pragma once
+class AddAFixedNumber
+{
+public:
+    AddAFixedNumber (int NumberToBeAdded);
+    int add(int a);
 
-inheritance 
+protected: 
+    int m_AddedNumber = 0;
+};
+```
+and the definition (*.cpp) like this
+```C++
+#include "AddNumber.h" // or whatever you have named your header file
+AddAFixedNumber::AddAFixedNumber (int NumberToBeAdded)
+{
+    m_AddedNumber = NumberToBeAdded;
+}
+
+int AddAFixedNumber::add(int a)
+{
+    return a += m_AddedNumber;
+}
+```
+What is new here? 
+* A class can have its own data variables (here m_AddedNumber). The m_ is just a matter of taste. I like to see the scope of the variable immediately. Simple data-types can be set to a default value
+* One method has the same name as the class: This is the constructor, which is called, if we instantiate an object of the class. It takes one parameter.
+```C++
+    AddAFixedNumber myadder(3);
+```  
+* Each definition of a member function includes classname:: to show its belonging.
 
 # Next steps
 read STL_in_c.md

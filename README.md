@@ -73,5 +73,7 @@ install it from https://visualstudio.microsoft.com/downloads/
 
 read howto_helloWorld.md
 
+### A real good free resource to learn:
+https://www.learncpp.com/
 
 

@@ -1,1 +1,1 @@
-add_executable(NoiseOutDemo noiseoutmain.cpp)
+add_executable(NoiseOutDemo noiseout_vectormain.cpp)

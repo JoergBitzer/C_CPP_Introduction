@@ -1,0 +1,1 @@
+add_executable(WaveOutDemo main.cpp WaveOut.cpp)

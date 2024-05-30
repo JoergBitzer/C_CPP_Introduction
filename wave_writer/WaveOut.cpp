@@ -2,7 +2,7 @@
 #include <memory.h>
 
 
-WaveOut::WaveOut(std::string filename, int sampleRate, int channels, AudioFormat format)
+WaveOut::WaveOut(const std::string &filename, int sampleRate, int channels, AudioFormat format)
 : m_filename(filename), m_sampleRate(sampleRate), m_channels(channels), m_format(format), m_isOpen(false)
 {
     setAudioFormat(format);
@@ -62,7 +62,7 @@ void WaveOut::write_file(float **data, int size, int channels)
     }
 }
 
-void WaveOut::write_file(std::vector<float> &data)
+void WaveOut::write_file(const std::vector<float> &data)
 {
     if (m_channels != 1)
     {
@@ -89,7 +89,7 @@ void WaveOut::write_file(std::vector<float> &data)
     
 }
 
-void WaveOut::write_file(std::vector<std::vector<float>> &data)
+void WaveOut::write_file(const std::vector<std::vector<float>> &data)
 {
     if (m_channels != data.size())
     {
@@ -159,7 +159,7 @@ void WaveOut::write(float **data, int size, int channels)
     }
 }
 
-void WaveOut::write(std::vector<float> &data)
+void WaveOut::write(const std::vector<float> &data)
 {
     if (m_file.good())
     {
@@ -174,7 +174,7 @@ void WaveOut::write(std::vector<float> &data)
         writeDataSize();
     }    
 }
-void WaveOut::write(std::vector<std::vector<float> > &data)
+void WaveOut::write(const std::vector<std::vector<float> > &data)
 {
     if (m_file.good())
     {

@@ -40,13 +40,13 @@ public:
         uint32_t datachunk_size;
     };
 
-    WaveOut(std::string filename, int sampleRate = 44100, int channels = 1, AudioFormat format = AudioFormat::INT16);
+    WaveOut(const std::string &filename, int sampleRate = 44100, int channels = 1, AudioFormat format = AudioFormat::INT16);
     ~WaveOut(){};
 
     void write_file(float *data, int size);
     void write_file(float **data, int size, int channels);
-    void write_file(std::vector<float> &data);
-    void write_file(std::vector<std::vector<float> > &data);
+    void write_file(const std::vector<float> &data);
+    void write_file(const std::vector<std::vector<float> > &data);
     inline void writeOneValue(float fvalue)
     {
         // saturate for integer formats 
@@ -94,8 +94,8 @@ public:
     void open();
     void write(float *data, int size);
     void write(float **data, int size, int channels);
-    void write(std::vector<float> &data);
-    void write(std::vector<std::vector<float>> &data);
+    void write(const std::vector<float> &data);
+    void write(const std::vector<std::vector<float> > &data);
 
     void close();
     //bool isOpen();
@@ -105,7 +105,7 @@ public:
 
     void setSampleRate(int sampleRate){if (!m_isOpen) m_sampleRate = sampleRate;};
     void setChannels(int channels){if (!m_isOpen) m_channels = channels;};
-    void setFileName(std::string filename){if (!m_isOpen) m_filename = filename;};
+    void setFileName(const std::string &filename){if (!m_isOpen) m_filename = filename;};
     void setAudioFormat(AudioFormat format);
 private:
     std::ofstream m_file;

@@ -33,5 +33,21 @@ target_compile_features(${TARGET_NAME} PUBLIC cxx_std_17)
 add_compile_definitions(<definition> ...)
 
 ### per target
-target_compile_definitions(${TARGET_NAME} PUBLIC  <definitions> )
+target_compile_definitions(${TARGET_NAME} PRIVATE  <definitions> )
 
+## or options
+target_compile_options(${TARGET_NAME} PRIVATE -Werror) # All warnings are error
+
+## Easier way to use all *cpp files with GLOB
+GLOB scans for all files with cpp and stores the filenames in SRC_FILES
+
+file(GLOB SRC_FILES *.cpp)
+add_executable(program "${SRC_FILES}")
+
+
+## Shared and static Libs
+add_library(MyLib SHARED source1.c source2.c)
+add_library(MyLibStatic STATIC source1.c source2.c)
+
+do not forget (important for JUCE binary files)
+set_property(MyLib PROPERTY POSITION_INDEPENDENT_CODE 1)

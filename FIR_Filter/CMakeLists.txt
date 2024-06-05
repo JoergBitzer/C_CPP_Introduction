@@ -1,0 +1,1 @@
+add_executable(FirTest TestFirMain.cpp FIR.cpp)

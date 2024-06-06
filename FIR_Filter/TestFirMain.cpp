@@ -18,10 +18,11 @@ int main()
     data[0] = 1.f;
     
     fir.processSamples(data);
-    for (auto i = 0; i < data.size(); ++i)
+    for (auto val : data)
     {
-        std::cout << data[i] << " ";
+        std::cout << val << " ";
     }
     std::cout << std::endl;
+    
     return 0;
 }

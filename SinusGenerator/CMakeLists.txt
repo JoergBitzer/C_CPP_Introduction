@@ -1,1 +1,1 @@
-add_executable(NoiseOutDemo noiseout_vectorfktmain.cpp NoiseGenerator.cpp WaveOut.cpp)
+add_executable(NoiseOutDemo SinusTestmain.cpp SinusGenerator.cpp WaveOut.cpp)

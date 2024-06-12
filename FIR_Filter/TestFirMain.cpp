@@ -2,27 +2,47 @@
 #include <vector>
 #include "FIR.h"
 
+#include <chrono>
+#include <cmath>
+
 int main()
 {
-    std::vector<float> bCoeffs = { 0.1f, 0.2f, 0.3f, -0.4f, 0.5f };
+    int FilterOrder = 25;
+    std::vector<float> bCoeffs;
+    bCoeffs.resize(FilterOrder);
+    for (auto i = 0; i < bCoeffs.size(); ++i)
+    {
+        bCoeffs[i] = 0.1f+i*0.1f*pow(-1,i);
+    }
+
+
     MonoFIR fir(bCoeffs);
     std::vector<float> data;
     
     // simplest test first. delta impulse should give the original coefficients
     // delta impulse with 100 samples
-    data.resize(20);
+    int test_len = 10000;
+    data.resize(test_len);
     for (auto i = 0; i < data.size(); ++i)
     {
         data[i] = 0.f;
     }
     data[0] = 1.f;
     
+    // measure execution time
+    auto start = std::chrono::steady_clock::now();
     fir.processSamples(data);
-    for (auto val : data)
+    auto end = std::chrono::steady_clock::now();
+    std::cout << "Elapsed time in nanoseconds : " 
+              << std::chrono::duration_cast<std::chrono::microseconds>(end - start).count()
+              << " mus" << std::endl;
+
+
+/*    for (auto val : data)
     {
         std::cout << val << " ";
     }
     std::cout << std::endl;
-    
+//*/    
     return 0;
 }

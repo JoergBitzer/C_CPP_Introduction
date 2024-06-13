@@ -21,7 +21,7 @@ int main()
     
     // simplest test first. delta impulse should give the original coefficients
     // delta impulse with 100 samples
-    int test_len = 10000;
+    int test_len = 100000;
     data.resize(test_len);
     for (auto i = 0; i < data.size(); ++i)
     {

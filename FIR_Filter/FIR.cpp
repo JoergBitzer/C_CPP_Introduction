@@ -1,7 +1,7 @@
 #include "FIR.h"
 
-#define FASTMODE 
-#define SUPERFASTMODE
+//#define FASTMODE 
+//#define SUPERFASTMODE
 
 MonoFIR::MonoFIR()
 {

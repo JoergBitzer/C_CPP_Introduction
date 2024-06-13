@@ -2,7 +2,7 @@ cmake_minimum_required(VERSION 3.12)
 
 SET(PROJECT_NAME "Demo_Programs")
 
-project(${PROJECT_NAME} VERSION 0.01 LANGUAGES CXX)
+project(${PROJECT_NAME} VERSION 0.0.1 LANGUAGES CXX)
 
 
 #add_subdirectory(hello_world)

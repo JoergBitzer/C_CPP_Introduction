@@ -30,4 +30,5 @@ gtest_discover_tests(${UNITTEST_TARGET})
 
 # mein test
 add_executable(FirTest TestFirMain.cpp FIR.cpp)
+target_compile_definitions(FirTest PRIVATE FASTMODE SUPERFASTMODE)
 

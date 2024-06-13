@@ -33,7 +33,7 @@ int MonoFIR::processSamples(std::vector<float> &data)
         {
             result += m_b.at(j) * m_bStates.at(j);
         }
-        data[i] = result;
+        data.at(i) = result;
         for (auto j = bLen - 1; j > 0; --j)
         {
             m_bStates.at(j) = m_bStates.at(j - 1);

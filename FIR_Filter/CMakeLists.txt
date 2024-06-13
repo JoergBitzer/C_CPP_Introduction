@@ -11,20 +11,22 @@ FetchContent_MakeAvailable(googletest)
 
 enable_testing()
 
+SET(UNITTEST_TARGET FirUnitTests)
+
 add_executable(
-    FirUnitTests
+    ${UNITTEST_TARGET}
     FirUnitTests.cpp
     FIR.cpp
 )
 target_link_libraries(
-  FirUnitTests
-  GTest::gtest_main
+    ${UNITTEST_TARGET}
+    GTest::gtest_main
 )
-set_target_properties(FirUnitTests PROPERTIES CXX_STANDARD 14)
-set_target_properties(FirUnitTests PROPERTIES CXX_STANDARD_REQUIRED ON)
+set_target_properties(${UNITTEST_TARGET} PROPERTIES CXX_STANDARD 14)
+set_target_properties(${UNITTEST_TARGET} PROPERTIES CXX_STANDARD_REQUIRED ON)
 
 include(GoogleTest)
-gtest_discover_tests(FirUnitTests)
+gtest_discover_tests(${UNITTEST_TARGET})
 
 # mein test
 add_executable(FirTest TestFirMain.cpp FIR.cpp)

@@ -7,9 +7,9 @@
 
 int main()
 {
-    int FilterOrder = 25;
+    int NrOfCoeffs = 25;
     std::vector<float> bCoeffs;
-    bCoeffs.resize(FilterOrder);
+    bCoeffs.resize(NrOfCoeffs);
     for (auto i = 0; i < bCoeffs.size(); ++i)
     {
         bCoeffs[i] = 0.1f+i*0.1f*pow(-1,i);

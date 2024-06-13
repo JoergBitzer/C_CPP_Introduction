@@ -1,5 +1,7 @@
 #include "FIR.h"
 
+#define FASTMODE 
+
 MonoFIR::MonoFIR()
 {
     m_b.resize(1);
@@ -19,7 +21,7 @@ void MonoFIR::setCoeffs(const std::vector<float> &bCoeffs)
     m_bStates.resize(m_b.size());
     reset();
 }
-
+#ifndef FASTMODE
 int MonoFIR::processSamples(std::vector<float> &data)
 {
     // simple but slow method
@@ -44,12 +46,47 @@ int MonoFIR::processSamples(std::vector<float> &data)
 
     return 0;
 }
+#else
+
+int MonoFIR::processSamples(std::vector<float> &data)
+{
+    int dLen = data.size();
+    for (auto i = 0; i < dLen; ++i)
+    {
+        m_bStates[m_writePos] = data[i];
+        m_readPos = m_writePos;
+        m_writePos++;
+        if (m_writePos >= m_bLen)
+        {
+            m_writePos = 0;
+        }
+        float result = 0.f;
+        for (auto j = 0; j < m_bLen; ++j)
+        {
+            result += m_b[j] * m_bStates[m_readPos--];
+            if (m_readPos < 0)
+            {
+                m_readPos = m_bLen - 1;
+            }
+        }
+        data[i] = result;
+
+    }
+    // refactor here
+
+    return 0;
+}
+
+#endif
 
 void MonoFIR::reset()
 {
-    int bLen = m_bStates.size();
-    for (auto i = 0; i < bLen; ++i)
+    m_bLen = m_bStates.size();
+    for (auto i = 0; i < m_bLen; ++i)
     {
         m_bStates.at(i) = 0.f;
     }
+    m_readPos = 0;
+    m_writePos = 0;
+
 }

@@ -17,6 +17,9 @@ public:
 protected:
     std::vector<float> m_b;
     std::vector<float> m_bStates;
+    int m_bLen;
+    int m_readPos;
+    int m_writePos;
 
 
 };

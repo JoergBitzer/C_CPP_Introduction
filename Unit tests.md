@@ -54,7 +54,7 @@ Der Vorteil der Nutzung von gtest ist, dass es sehr einfach ist Tests zu schreib
 Schreibe UnitTests mit der google testsuite für die folgende Funktion/Klasse:
 HIER IHR CODE
 ```
-Üblicherweise bekommt man alle Grundtests direkt zurück.
+Üblicherweise bekommt man alle Grundtests direkt zurück. Aber Achtung, häufig sind die Testergebnisse falsch. ChatGPT dient nur dazu ein Grundgerüst schnell aufbauen zu können. Die richtigen Tests zu designen ist immer noch eine Entwicklungsaufgabe.
 
 ## Google Testsuite Grundfunktionen für Tests
 

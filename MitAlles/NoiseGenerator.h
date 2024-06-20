@@ -8,7 +8,7 @@ class UniformNoiseGenerator
 public:
     UniformNoiseGenerator();
     UniformNoiseGenerator(float minvalue, float maxvalue);
-    ~UniformNoiseGenerator();
+    ~UniformNoiseGenerator(){};
     void getNoise(std::vector<float> &dataOut);
 
 protected:

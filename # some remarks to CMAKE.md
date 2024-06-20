@@ -32,6 +32,41 @@ target_compile_features(${TARGET_NAME} PUBLIC cxx_std_17)
 ### globally
 add_compile_definitions(<definition> ...)
 
-### per target
-target_compile_definitions(${TARGET_NAME} PUBLIC  <definitions> )
+### per target (This is good practice)
+target_compile_definitions(${TARGET_NAME} PRIVATE  <definitions> )
 
+## or options
+target_compile_options(${TARGET_NAME} PRIVATE -Werror) # All warnings are error
+
+## Easier way to use all *cpp files with GLOB
+GLOB scans for all files with cpp and stores the filenames in SRC_FILES
+
+file(GLOB SRC_FILES *.cpp)
+add_executable(program "${SRC_FILES}")
+
+
+## Shared and static Libs
+add_library(MyLib SHARED source1.c source2.c)
+add_library(MyLibStatic STATIC source1.c source2.c)
+
+do not forget (important for JUCE binary files)
+set_property(MyLib PROPERTY POSITION_INDEPENDENT_CODE 1)
+
+
+## compiler definitions defined in CMAKE
+How to inject defines from CMAKE, for example to have builds with cout and without
+
+TBD
+
+## Version numbering
+Good starting point is Semantic version number (see for example python versions e.g. 3.11.8)
+major, minor, Patch
+
+and how to use that with CMAKE
+
+TBD
+
+
+### good source for more
+
+https://cliutils.gitlab.io/modern-cmake/

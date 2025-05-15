@@ -46,8 +46,7 @@ cmake --build build
 ```
 
 #### Visual Code CMAKE extension
-I am not sure, why cmake extension starts or not. However, left mouse click on CmakeLists.txt 
-has the commands "Build All Projects". This starts a process to choose a sub-directory and start the cmake extension.
+After installing the cmake extension you have to restart VSCode. Within this extension you find the command "Build All Projects". This starts a process to choose a sub-directory and start the cmake extension.
 
 
 ### Start your programm
@@ -55,7 +54,7 @@ You will find your program in the build subdirectory. You can start it by enteri
 ```Shell
 ./FirstProgramm
 ```
-for Windows ist should read FirstProgramm.exe
+for Windows it should read FirstProgramm.exe
 
 ## Explain the program and steps:
 
@@ -64,7 +63,7 @@ All programs (applications) have one entry point in C/C++, that is the main func
 ```C++
 int main (int argc, char** argv)
 ```
-Since C/C++ is a strict language in terms of data types, every variable must be defined. In C++ a simplification is possible by using the data-type auto. If you are sure, what you need, I recommend to use the explicit data-type like int for integer values, float for 32Bit floating point, double for 64Bit floating point numbers, char for characters (or Byte fields, since sizeof(char) = 1 Byte)
+Since C/C++ is a strict language in terms of data types, every variable must be defined. For C++ a simplification is possible by using the data-type auto. If you are sure, what you need, I recommend to use the explicit data-type like int for integer values, float for 32Bit floating point, double for 64Bit floating point numbers, char for characters (or Byte fields, since sizeof(char) = 1 Byte)
 
 Each function can have one return variable, the data type is given before the function name (here main). The following variable list is for the main function optional. Therefore int main() is OK.
 

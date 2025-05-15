@@ -4,7 +4,7 @@ WORK IN PROGRESS (be careful, all is subject to change)
 A short course of using C/C++ in a plattform independent way:
 
 The goal of this course is to provide you with the tools and knowledge to develop smal programms in C ür C++ 
-without relying on a plattform specific IDE (e.g. Microsoft Visual Studio Code or XCode). Instead we will use
+without relying on a plattform specific IDE (e.g. Microsoft Visual Studio or XCode). Instead we will use
 tools that allows for a plattform independent tool chain (sort of).
 
 ## First Steps:

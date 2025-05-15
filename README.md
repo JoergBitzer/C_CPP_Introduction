@@ -16,7 +16,7 @@ I assume, you have git (version control) installed on your computer. if not, do 
 #### Microsoft
 The Microsoft compiler suite is in its community edition free of charge. We will use that. Since you install the microsoft visual Studio compiler, you could use the IDE as well. However, this course is not the right choice than.
 
-Download Visual Studio 2022 Community edition:
+Download the latest Visual Studio 20xx Community edition:
 https://visualstudio.microsoft.com/downloads/
 
 and install it. 
